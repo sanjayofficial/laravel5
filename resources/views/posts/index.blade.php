@@ -11,7 +11,7 @@
 <div class="article">
 	<h3> <a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
 	<small>Written on {{$post->created_at}}</small>
-	<h4>{{$post->body}}</h4>
+	<h4>{!!$post->body!!}</h4>
 </div>
 
 @endforeach

@@ -22,7 +22,7 @@ class PostsController extends Controller
        // $posts = DB::select('SELECT * FROM posts');
         // $posts = Post::orderBy('title', 'desc')->take(1)->get();
 
-           $posts = Post::orderBy('title', 'desc')->paginate(1);
+           $posts = Post::orderBy('created_at', 'asc')->paginate(10);
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -53,7 +53,12 @@ class PostsController extends Controller
             'body' => 'required'
         ]);
        // dd($request->all());
-        return 123;
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+         $post->save();
+
+         return redirect('/posts')->with('success','Post created');
     }
 
     /**
