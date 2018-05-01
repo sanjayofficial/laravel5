@@ -49,10 +49,10 @@ class PostsController extends Controller
 
        
         $this->validate($request, [
-            'title '=> 'required',
+            'title'=> 'required',
             'body' => 'required'
         ]);
-        dd($request->all());
+       // dd($request->all());
         return 123;
     }
 

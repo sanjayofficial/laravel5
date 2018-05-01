@@ -5,6 +5,7 @@
 
 
 <form method="POST" action="{{ route('posts.store') }}"> 
+  {{csrf_field()}}
   <div>
     <label for="title">Title</label>
     <input id="title" type="text" name="title">

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+	protected $fillable = ['title', 'body'];
     //
     protected $table  = 'posts';
     //
@@ -13,5 +15,5 @@ class Post extends Model
     //
     public $timestamps = true;
 
- 	protected $fillable = ['title', 'body'];
+ 	
 }
