@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in!
+
+                    <a href="/posts/create" class="btn btn-primart">Create Post</a>
+                    <h3>Your blog posts</h3>
                 </div>
             </div>
         </div>
