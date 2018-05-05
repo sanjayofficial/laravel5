@@ -34,8 +34,6 @@
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         setTimeout(function(){
-   
-
         CKEDITOR.replace( 'article-ckeditor' );
         },100);
     </script>
