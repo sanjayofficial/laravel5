@@ -5,9 +5,11 @@
 	<a href="/posts" class="btn btn-default">Go back</a>
 	<div class="article">
 <h3> {{$post->title}}</h3>
-<small>Written on {{$post->created_at}}</small>
+<small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
 	<h4>{!!$post->body!!}</h4>
 	<hr>
+	@if(!Auth::guest())
+	  @if(Auth::user()->id == $post->user_id)
 	<a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
 
 
@@ -16,7 +18,8 @@
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 		<input type="submit" name="submit" class="btn btn-danger" value="Delete">
 	</form>
-
+	@endif
+@endif
 </div>
 
 

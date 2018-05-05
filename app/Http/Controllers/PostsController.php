@@ -8,6 +8,14 @@ use DB;
 
 class PostsController extends Controller
 {
+
+
+
+
+ public function __construct(){
+    $this->middleware('auth', ['except' => ['index', 'show']]);
+ }
+
     /**
      * Display a listing of the resource.
      *
@@ -50,14 +58,20 @@ class PostsController extends Controller
        
         $this->validate($request, [
             'title'=> 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        //handle file upload
+
+
+
        // dd($request->all());
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-          $post->user_id = auth()->user()->id;
-         $post->save();
+        $post->user_id = auth()->user()->id;
+        $post->save();
 
          return redirect('/posts')->with('success','Post created');
     }
@@ -85,6 +99,11 @@ class PostsController extends Controller
     {
         //
           $post = Post::find($id);
+          //check for correct user
+          if (auth()->user()->id != $post->user_id) {
+              # code...
+            return redirect('/posts')->with('error', 'Unauthorized page');
+          }
           return view('posts.edit')->with('post', $post);
     }
 
@@ -121,6 +140,13 @@ class PostsController extends Controller
     {
         //
          $post = Post::find($id);
+
+         if (auth()->user()->id != $post->user_id) {
+              # code...
+            return redirect('/posts')->with('error', 'Unauthorized page');
+          }
+
+
           $post -> delete();
           return redirect('/posts')->with('success','Post Deleted');
     }
