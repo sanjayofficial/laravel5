@@ -15,8 +15,7 @@
    <textarea id="article-ckeditor" name="body" class="form-control"></textarea>
   </div>
   <div class="form-group">
-
-    <input type="file" name="" id>
+    <input type="file" name="cover_image" id="">
   </div>
   <div  class="form-group">
     <input type="submit" value="Send" class="btn btn-default">
