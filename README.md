@@ -11,7 +11,7 @@ App\User::count();<br/>
 
 # Creating a New User
 $user = new App\User;  
-$user->name = "Wruce Bayne";     
+$user->name = "Bruce Wayne";     
 $user->email = "iambatman@savegotham.com";  
 $user->save();  
 
