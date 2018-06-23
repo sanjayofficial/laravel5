@@ -10,32 +10,20 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+   <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @include('inc.style')
 </head>
-<body>
-    <div id="app">
-        @include('inc.navbar')
-
-
-        <main class="py-4">
-             @include('inc.messages')
-            @yield('content')
-        </main>
-    </div>
-
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-        setTimeout(function(){
-        CKEDITOR.replace( 'article-ckeditor' );
-        },100);
-    </script>
+<body class="theme-blue">
+      <section class="content">
+         @include('inc.messages')
+         @yield('content')
+      </section>
+  @include('inc.script')
 </body>
 </html>

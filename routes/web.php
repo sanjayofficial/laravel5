@@ -11,12 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$routes_inc = [
+	'posts',
+	'auth',
+	'dashboard',
+	'reports'
+];
 
-Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index');
 
-Route::resource('posts', 'PostsController');
+foreach ($routes_inc as $routes) {
+
+	$file = base_path().'/routes/inc/'.$routes.'.php';
+	 if ( ! file_exists($file))
+    {
+        $msg = "Route partial [{$routes}] not found.";
+        throw new \Illuminate\Filesystem\FileNotFoundException($msg);
+    }
+	require_once $file;
+}
+
+

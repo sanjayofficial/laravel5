@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.default')
 @section('content')
 <div class="container">
 	<a href="/posts" class="btn btn-default">Go back</a>
