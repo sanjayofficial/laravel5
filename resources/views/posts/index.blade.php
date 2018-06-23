@@ -1,9 +1,22 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-<h1>Posts</h1>
+<div class="container-fluid">
+	<div class="block-header">
+                <h2>POSTS</h2>
+     </div>
 
+<div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                POSTS
+                                <small>Show posts list</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                        	
 @if( count($posts)>0)
 
 @foreach($posts as $post)
@@ -28,6 +41,16 @@
 @else
 <p>No post</p>
 @endif
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
 
 </div><!-- container -->
 @endsection

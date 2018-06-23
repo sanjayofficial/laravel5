@@ -20,7 +20,7 @@
     @include('inc.style')
 </head>
 <body class="theme-blue">
-      <section class="content">
+      <section class="content-">
          @include('inc.messages')
          @yield('content')
       </section>

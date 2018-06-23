@@ -1,8 +1,22 @@
 @extends('layouts.default')
 @section('content')
-<div class="container">
-	<a href="/posts" class="btn btn-default">Go back</a>
-	<div class="article">
+
+
+<div class="container-fluid">
+            <div class="block-header">
+                 <a href="/posts" class="btn btn-default">Go back</a>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                SINGLE POST
+                                <small>Show detailed post</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                        		<div class="article">
 <h3> {{$post->title}}</h3>
 <img src="/storage/cover_images/{{$post->cover_image}}" style="width:100%">
 <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
@@ -21,7 +35,11 @@
 	@endif
 @endif
 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-</div><!-- container -->
 @endsection
