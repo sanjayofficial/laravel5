@@ -11,8 +11,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                POSTS
-                                <small>Show posts list</small>
+                               POSTS LIST
                             </h2>
                         </div>
                         <div class="body">

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
   <div class="block-header">
-                <h2> EDIT POST</h2>
+                <h2>POST</h2>
             </div>
               <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -11,7 +11,6 @@
                         <div class="header">
                             <h2>
                                 EDIT POST
-                                <small>Edit post</small>
                             </h2>
                         </div>
                         <div class="body">

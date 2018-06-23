@@ -11,7 +11,6 @@
                         <div class="header">
                             <h2>
                                 CREATE POST
-                                <small>Create post</small>
                             </h2>
                         </div>
                         <div class="body">
